@@ -148,4 +148,6 @@ int main()
     printf("Se o resultado for 1 a primeira carta ganhou!\n");
     printf("Se o resultado for 0 a segunda carta ganhou!\n");
     printf("O resulta é: %d\n", resultado);
+
+    return 0;
 }
