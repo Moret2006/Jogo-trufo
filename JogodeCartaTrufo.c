@@ -144,9 +144,8 @@ printf("PIB por capita: %.2f\n", pibperc1);
 printf("O valor do seu super é: %.2f\n", SuperPowerB);
 
 //Final do programa (Hora do resultado)
-printf("Se o resultado for 1 a primeira carta ganhou!\n");
-printf("Se o resultado for 0 a segunda carta ganhou!\n");
-printf("O resulta é: %d\n", resultado);
-
-return 0;
+if (SuperPowerA > SuperPowerB)
+printf("*Carta %s ganhou*", Estado);
+else
+printf("*Carta %s ganhou*", estado);
 }
