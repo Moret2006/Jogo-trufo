@@ -57,9 +57,6 @@ SuperPower = É realizada a soma de todos os valores numericos da carta.
     float SuperPowerB;
     int crime1;
 
-    //resultado
-    int resultado;
-
     //Menu
     int opcao;
 //menu
@@ -92,7 +89,7 @@ scanf("%f",&PIB);
 printf("Quantos KM² tem o Estado escolhido?\n");
 scanf("%f",&km);
 
-printf("Qual é o nivel de criminalidade?");
+printf("Qual é o nivel de criminalidade?\n");
 scanf("%d", &crime);
 
 printf("Qual é o nivel do seu Estado?\n");
@@ -133,10 +130,10 @@ densidadep1 = (float) populacao1 / km1;
 pibperc = (float) PIB / populacao;
 pibperc1 = (float) PIB1 / populacao1;
 
-SuperPowerA = (float) populacao + PIB + km + valor + densidadep + pibperc - crime;
-SuperPowerB = (float) populacao1 + PIB1 + km1 + valor1 + densidadep1 + pibperc1 - crime1;
+SuperPowerA = (float) populacao + PIB + km + valor + densidadep + pibperc;
+SuperPowerB = (float) populacao1 + PIB1 + km1 + valor1 + densidadep1 + pibperc1;
 
-resultado = SuperPowerA > SuperPowerB;
+
 
 //primeira carta
 printf("Atributos da primeira carta:\n");
@@ -168,10 +165,13 @@ printf("PIB por capita: %.2f\n", pibperc1);
 printf("O valor do seu super é: %.2f\n", SuperPowerB);
 
 //Final do programa (Hora do resultado)
-if (SuperPowerA > SuperPowerB)
-printf("*Carta %s ganhou*", Estado);
-else
-printf("*Carta %s ganhou*", estado);
+if (SuperPowerA > SuperPowerB){
+printf("*Carta %s ganhou*", Estado);}
+else if (SuperPowerA < SuperPowerB){
+printf("*Carta %s ganhou*", estado);}
+else{
+    printf("Deu empate");
+}
     break;
 case 2:
 printf("regras do jogo...");
