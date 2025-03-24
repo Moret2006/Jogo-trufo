@@ -43,7 +43,6 @@ SuperPower = É realizada a soma de todos os valores numericos da carta.
     float densidadep;
     float pibperc;
     float SuperPowerA;
-    int crime;
 
     // Segunda carta
     char letra2;
@@ -55,7 +54,6 @@ SuperPower = É realizada a soma de todos os valores numericos da carta.
     float densidadep1;
     float pibperc1;
     float SuperPowerB;
-    int crime1;
 
     //Menu
     int opcao;
@@ -89,9 +87,6 @@ scanf("%f",&PIB);
 printf("Quantos KM² tem o Estado escolhido?\n");
 scanf("%f",&km);
 
-printf("Qual é o nivel de criminalidade?\n");
-scanf("%d", &crime);
-
 printf("Qual é o nivel do seu Estado?\n");
 scanf("%d",&valor);
 printf("\n");
@@ -116,9 +111,6 @@ scanf("%f",&PIB1);
 
 printf("Quantos KM² tem o Estado escolhido?\n");
 scanf("%f",&km1);
-
-printf("Qual é o nivel de criminalidade?\n");
-scanf("%d", &crime);
 
 printf("Qual é o nivel do seu Estado?\n");
 scanf("%d",&valor1);
