@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 int main() {
 /* 
@@ -41,6 +43,7 @@ SuperPower = É realizada a soma de todos os valores numericos da carta.
     float densidadep;
     float pibperc;
     float SuperPowerA;
+    int crime;
 
     // Segunda carta
     char letra2;
@@ -52,10 +55,23 @@ SuperPower = É realizada a soma de todos os valores numericos da carta.
     float densidadep1;
     float pibperc1;
     float SuperPowerB;
+    int crime1;
 
     //resultado
     int resultado;
 
+    //Menu
+    int opcao;
+//menu
+printf("***Super Trufo***\n");
+printf("1. Jogar\n");
+printf("2. regras\n");
+printf("3. sair\n");
+printf("Escolha uma opcao\n");
+scanf("%d", &opcao);
+switch(opcao)
+{
+case 1:
 //primeira carta
 printf("* Primeira carta *\n");
 printf("Qual Estado você escolhe?\n");
@@ -75,6 +91,9 @@ scanf("%f",&PIB);
 
 printf("Quantos KM² tem o Estado escolhido?\n");
 scanf("%f",&km);
+
+printf("Qual é o nivel de criminalidade?");
+scanf("%d", &crime);
 
 printf("Qual é o nivel do seu Estado?\n");
 scanf("%d",&valor);
@@ -101,19 +120,24 @@ scanf("%f",&PIB1);
 printf("Quantos KM² tem o Estado escolhido?\n");
 scanf("%f",&km1);
 
+printf("Qual é o nivel de criminalidade?\n");
+scanf("%d", &crime);
+
 printf("Qual é o nivel do seu Estado?\n");
 scanf("%d",&valor1);
 
+//parte dos calculos 
 densidadep = (float) populacao / km;
 densidadep1 = (float) populacao1 / km1;
 
 pibperc = (float) PIB / populacao;
 pibperc1 = (float) PIB1 / populacao1;
 
-SuperPowerA = (float) populacao + PIB + km + valor + densidadep + pibperc;
-SuperPowerB = (float) populacao1 + PIB1 + km1 + valor1 + densidadep1 + pibperc1;
+SuperPowerA = (float) populacao + PIB + km + valor + densidadep + pibperc - crime;
+SuperPowerB = (float) populacao1 + PIB1 + km1 + valor1 + densidadep1 + pibperc1 - crime1;
 
 resultado = SuperPowerA > SuperPowerB;
+
 //primeira carta
 printf("Atributos da primeira carta:\n");
 printf("\n");
@@ -148,4 +172,13 @@ if (SuperPowerA > SuperPowerB)
 printf("*Carta %s ganhou*", Estado);
 else
 printf("*Carta %s ganhou*", estado);
+    break;
+case 2:
+printf("regras do jogo...");
+    break;
+
+    case 3:
+    printf("Saiu do jogo!");
+    break;
+}
 }
