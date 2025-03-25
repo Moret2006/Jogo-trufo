@@ -32,6 +32,10 @@ densidadep = densidade populacional que é feito a divisao de "populacao" por "k
 pibperc = PIB por capita que é feito a divisao de "PIB" por "populacao".
 
 SuperPower = É realizada a soma de todos os valores numericos da carta.
+
+Ataque = um numero aleatorio de 0 a 100 que sera subtraido do SuperPower do adversario.
+
+defesa = um numero aleatorio de 0 a 100 que sera somado no seu SuperPower.
 */
     // Primeira carta
     char Letra;
@@ -43,6 +47,8 @@ SuperPower = É realizada a soma de todos os valores numericos da carta.
     float densidadep;
     float pibperc;
     float SuperPowerA;
+    int ataque;
+    int defesa;
 
     // Segunda carta
     char letra2;
@@ -54,6 +60,9 @@ SuperPower = É realizada a soma de todos os valores numericos da carta.
     float densidadep1;
     float pibperc1;
     float SuperPowerB;
+    int ataque1;
+    int defesa1;
+
 
     //Menu
     int opcao;
@@ -115,15 +124,22 @@ scanf("%f",&km1);
 printf("Qual é o nivel do seu Estado?\n");
 scanf("%d",&valor1);
 
+//Numeros aleatorios
+ataque = rand() % 100 +1;
+ataque1 = rand() % 100 +1;
+defesa = rand() % 100 +1;
+defesa1 = rand() % 100 +1;
+
 //parte dos calculos 
+
 densidadep = (float) populacao / km;
 densidadep1 = (float) populacao1 / km1;
 
 pibperc = (float) PIB / populacao;
 pibperc1 = (float) PIB1 / populacao1;
 
-SuperPowerA = (float) populacao + PIB + km + valor + densidadep + pibperc;
-SuperPowerB = (float) populacao1 + PIB1 + km1 + valor1 + densidadep1 + pibperc1;
+SuperPowerA = (float) (populacao + PIB + km + valor + densidadep + pibperc + defesa) - ataque1;
+SuperPowerB = (float) (populacao1 + PIB1 + km1 + valor1 + densidadep1 + pibperc1 + defesa1) - ataque;
 
 
 
@@ -139,6 +155,8 @@ printf("KM²: %.3f\n", km);
 printf("Valor: %d\n",valor);
 printf("Densidade Populacional: %f \n", densidadep);
 printf("PIB por capita: %.2f\n", pibperc);
+printf("Voce deu %d de dano no seu adversario! \n", ataque);
+printf("Sua defesa foi: %d \n", defesa);
 printf("O valor do seu super é: %.2f\n", SuperPowerA);
 printf("\n");
 
@@ -154,6 +172,8 @@ printf("KM²: %.3f\n", km1);
 printf("Valor: %d \n",valor1);
 printf("Densidade Populacional: %f \n", densidadep1);
 printf("PIB por capita: %.2f\n", pibperc1);
+printf("Voce deu %d de dano no seu adversario! \n", ataque1);
+printf("Sua defesa foi: %d \n", defesa1);
 printf("O valor do seu super é: %.2f\n", SuperPowerB);
 
 //Final do programa (Hora do resultado)
